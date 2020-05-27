@@ -106,6 +106,16 @@ public class RegistroActivity extends AppCompatActivity {
         correo = edtCorreo.getText().toString();
         Usuario miUsuario = new Usuario(usuario, correo, contraseña, puntos);
         db.collection("Usuarios").document().set(miUsuario);
+        mAuth.createUserWithEmailAndPassword(correo, contraseña).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if (task.isSuccessful()){
+                    Toast.makeText(getApplicationContext(), "El registro fue exitoso", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(getApplicationContext(), "Hubo un problema en el registro", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
 
     private void crearUsuario(String correo, String contraseña) {
