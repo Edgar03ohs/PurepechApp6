@@ -1,3 +1,16 @@
 <resources>
-    <string name="app_name">PurepechApp6</string>
+    <string name="app_name">PurepechApp</string>
+    <string name="strBotonIngresar">Iniciar Sesion</string>
+    <string name="strBotonCrear">Crear Cuenta</string>
+    <string name="usuario">Usuario</string>
+    <string name="correo">Correo</string>
+    <string name="contrase_aLog">Contraseña</string>
+    <string name="contrase_aReg">Contraseña (Al menos 6 dígitos)</string>
+    <string name="txt_eslogan">Aprendiendo la lengua Purépecha</string>
+    <string name="start_main">Empezar a aprender</string>
+    <string name="registrarse">Registrarse</string>
+    <string name="iniciar_sesion">Iniciar Sesion</string>
+    <string name="registrate">Regístrate</string>
+    <string name="confirmar_contrase_a">Confirmar contraseña</string>
+    <string name="crear_cuenta">Crear Cuenta</string>
 </resources>

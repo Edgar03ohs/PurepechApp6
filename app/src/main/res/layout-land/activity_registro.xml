@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo_pureuno"
+    tools:context=".RegistroActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:id="@+id/PurepechApp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="casual"
+            android:gravity="center"
+            android:text="@string/app_name"
+            android:textColor="#432942"
+            android:textSize="50sp"
+            android:textStyle="bold"
+            tools:layout_conversion_absoluteHeight="87dp"
+            tools:layout_editor_absoluteY="10dp"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_conversion_absoluteWidth="731dp" />
+
+        <TextView
+            android:id="@+id/Registrate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="casual"
+            android:gravity="center"
+            android:text="@string/registrate"
+            android:textColor="#9F8C52"
+            android:textSize="43sp"
+            android:textStyle="bold"
+            tools:layout_conversion_absoluteHeight="100dp"
+            tools:layout_editor_absoluteY="107dp"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_conversion_absoluteWidth="731dp" />
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            android:columnOrderPreserved="true">
+
+            <EditText
+                android:id="@+id/edtUsuarioReg"
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:hint="@string/usuario"
+                android:inputType="textPersonName"
+                android:textColor="@color/colorAccent"
+                android:textColorHint="@color/colorAccent"
+                tools:layout_conversion_absoluteHeight="45dp"
+                tools:layout_conversion_absoluteWidth="731dp"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="219dp" />
+
+            <EditText
+                android:id="@+id/edtCorreo"
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="0dp"
+                android:gravity="center"
+                android:hint="@string/correo"
+                android:inputType="textEmailAddress"
+                android:textColor="@color/colorAccent"
+                android:textColorHint="@color/colorAccent"
+                tools:layout_conversion_absoluteHeight="45dp"
+                tools:layout_conversion_absoluteWidth="731dp"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="276dp" />
+
+
+            <EditText
+                android:id="@+id/edtContraseñaReg"
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_row="1"
+                android:layout_column="0"
+                android:gravity="center"
+                android:hint="@string/contrase_aReg"
+                android:inputType="textPassword"
+                android:textColor="@color/colorAccent"
+                android:textColorHint="@color/colorAccent"
+                tools:layout_conversion_absoluteHeight="45dp"
+                tools:layout_conversion_absoluteWidth="731dp"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="333dp" />
+
+            <EditText
+                android:id="@+id/edtConfContra"
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginTop="20dp"
+                android:layout_row="1"
+                android:layout_column="1"
+                android:gravity="center"
+                android:hint="@string/confirmar_contrase_a"
+                android:inputType="textPassword"
+                android:textColor="@color/colorAccent"
+                android:textColorHint="@color/colorAccent"
+                tools:layout_conversion_absoluteHeight="21dp"
+                tools:layout_conversion_absoluteWidth="731dp"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="390dp" />
+        </GridLayout>
+
+        <Button
+            android:id="@+id/btnCrearCuenta"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="295dp"
+            android:background="@drawable/background_botones"
+            android:text="@string/crear_cuenta"
+            android:textColor="@color/colorAccent"
+            tools:layout_conversion_absoluteHeight="0dp"
+            tools:layout_editor_absoluteY="437dp"
+            tools:layout_editor_absoluteX="314dp"
+            tools:layout_conversion_absoluteWidth="102dp" />
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo_pureuno"
+    tools:context=".RegistroActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+
+        >
+        <TextView
+            android:id="@+id/PurepechApp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="casual"
+            android:gravity="center"
+            android:text="@string/app_name"
+            android:textColor="#432942"
+            android:textSize="50sp"
+            android:textStyle="bold"
+            />
+
+        <TextView
+            android:id="@+id/Registrate"
+            android:layout_width="fill_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="casual"
+            android:gravity="center"
+            android:text="@string/registrate"
+            android:textColor="#9F8C52"
+            android:textSize="43sp"
+            android:textStyle="bold"
+            />
+
+        <EditText
+            android:id="@+id/edtUsuarioReg"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:hint="@string/usuario"
+            android:inputType="textPersonName"
+            android:textColor="@color/colorAccent"
+            android:textColorHint="@color/colorPrimaryDark" />
+
+        <EditText
+            android:id="@+id/edtCorreo"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:hint="@string/correo"
+            android:inputType="textEmailAddress"
+            android:textColor="@color/colorAccent"
+            android:textColorHint="@color/colorPrimaryDark" />
+
+
+        <EditText
+            android:id="@+id/edtContraseñaReg"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:hint="@string/contrase_aReg"
+            android:inputType="textPassword"
+            android:textColor="@color/colorAccent"
+            android:textColorHint="@color/colorPrimaryDark" />
+
+        <EditText
+            android:id="@+id/edtConfContra"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:hint="@string/confirmar_contrase_a"
+            android:inputType="textPassword"
+            android:textColor="@color/colorAccent"
+            android:textColorHint="@color/colorPrimaryDark" />
+
+        <Button
+            android:id="@+id/btnCrearCuenta"
+            android:layout_width="150dp"
+            android:textSize="19dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/background_botones"
+            android:layout_gravity="center"
+            android:layout_marginTop="25dp"
+            android:text="@string/crear_cuenta"
+            android:textColor="@color/colorAccent"/>
+
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>
