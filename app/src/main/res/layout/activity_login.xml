@@ -27,12 +27,12 @@
             />
 
         <EditText
-            android:id="@+id/edtUsuarioLog"
+            android:id="@+id/edtCorreoLog"
             android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="52dp"
-            android:hint="@string/usuario"
-            android:inputType="textPersonName"
+            android:hint="@string/correo"
+            android:inputType="textEmailAddress"
             android:textColor="@color/colorAccent"
             android:textColorHint="@color/colorPrimaryDark"
             />

@@ -8,8 +8,16 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -18,12 +26,22 @@ public class LoginActivity extends AppCompatActivity {
 
     EditText edtUsuarioLog;
     EditText edtContraseñaLog;
+    EditText edtCorreoLog;
 
     String UsuarioLog;
     String ContraseñaLog;
+    String CorreoLog;
 
+    /*
     String usuario;
     String password;
+    */
+
+    //Agregamos atributo mAuth para administrar el registro de un nuevo usuario
+    private FirebaseAuth mAuth;
+
+    //Instancia de la base de datos de Firestore
+    FirebaseFirestore db;
 
 
     @Override
@@ -31,10 +49,12 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        edtUsuarioLog = findViewById(R.id.edtUsuarioLog);
+        edtCorreoLog = findViewById(R.id.edtCorreoLog);
         edtContraseñaLog = findViewById(R.id.edtContraseñaLog);
         btnIniciarSesion = findViewById(R.id.btnIniciarSesion);
         btnRegistrarse = findViewById(R.id.btnRegistrarse);
+        mAuth = FirebaseAuth.getInstance();
+        db = FirebaseFirestore.getInstance();
 
         btnIniciarSesion.setOnClickListener(onClickIniciarSesion);
         btnRegistrarse.setOnClickListener(onClikRegistrarse);
@@ -45,9 +65,9 @@ public class LoginActivity extends AppCompatActivity {
         @Override
         public void onClick(View view) {
 
-            UsuarioLog = edtUsuarioLog.getText().toString();
+            CorreoLog = edtCorreoLog.getText().toString();
             ContraseñaLog = edtContraseñaLog.getText().toString();
-            try {
+            /*try {
                 Bundle bundleRegistro = getIntent().getExtras();
                 usuario = bundleRegistro.getString(getString(R.string.usuario));
                 password = bundleRegistro.getString(getString(R.string.contrase_aLog));
@@ -55,7 +75,6 @@ public class LoginActivity extends AppCompatActivity {
             {
                 Toast.makeText(getApplicationContext(), "Verifica el usuario o crea una cuetna", Toast.LENGTH_SHORT).show();
             }
-
             if( UsuarioLog.equals(usuario) && ContraseñaLog.equals(password)  )
             {
                 Toast.makeText(getApplicationContext(),"Bienvenido, has ingresado correctamente, " + UsuarioLog, Toast.LENGTH_SHORT).show();
@@ -63,18 +82,20 @@ public class LoginActivity extends AppCompatActivity {
             else if( UsuarioLog.equals(usuario) && !ContraseñaLog.equals(password)  )
             {
                 Toast.makeText(getApplicationContext(),"Contraseña incorrecta, " + UsuarioLog,Toast.LENGTH_SHORT).show();
+            }*/
+            if (ContraseñaLog.length() !=0 && CorreoLog.length() !=0) {
+                ingresarExistente();
             }
-            if (ContraseñaLog.length() ==0 && UsuarioLog.length() != 0){
+            else if (ContraseñaLog.length() ==0 && CorreoLog.length() != 0){
                 Toast.makeText(getApplicationContext(), "Debes inrgesar tu contraseña", Toast.LENGTH_SHORT).show();
             }
-            if(UsuarioLog.length() == 0 && ContraseñaLog.length() !=0){
-                Toast.makeText(getApplicationContext(), "Debes ingresar un nombre de usuario", Toast.LENGTH_SHORT).show();
+            else if(CorreoLog.length() == 0 && ContraseñaLog.length() !=0){
+                Toast.makeText(getApplicationContext(), "Debes ingresar un correo para iniciar sesión", Toast.LENGTH_SHORT).show();
             }
-
-            if(UsuarioLog.length() == 0 && ContraseñaLog.length() ==0)
+            else if(CorreoLog.length() == 0 && ContraseñaLog.length() ==0)
             {
                 Toast.makeText(getApplicationContext(), "Los campos están vacíos", Toast.LENGTH_SHORT).show();
-            }
+            }/*
             new Thread(new Runnable() {
                 @Override
                 public void run() {
@@ -88,21 +109,37 @@ public class LoginActivity extends AppCompatActivity {
                     }
                     Log.d("Hilo","Hilo Terminado");
                 }
-
-            }).start();
-
+            }).start();*/
         }
-
     };
 
     View.OnClickListener onClikRegistrarse = new View.OnClickListener() {
         @Override
-        public void onClick(View v) {
+        public void onClick(View view) {
             Intent btnRegistrarse = new Intent(LoginActivity.this, RegistroActivity.class);
             LoginActivity.this.startActivity(btnRegistrarse);
-            finish();
         }
     };
+
+    //Valida usuario por medio de correo y contraseña
+    private void ingresarExistente() {
+        ContraseñaLog = edtContraseñaLog.getText().toString();
+        CorreoLog = edtCorreoLog.getText().toString();
+        mAuth.signInWithEmailAndPassword(CorreoLog, ContraseñaLog).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if (task.isSuccessful()) {
+                    Toast.makeText(getApplicationContext(),"Bienvenido, has ingresado correctamente, " +  CorreoLog, Toast.LENGTH_SHORT).show();
+                    Intent btnIniciarSesion = new Intent(getApplicationContext(), PerfilActivity.class);
+                    LoginActivity.this.startActivity(btnIniciarSesion);
+                    finish();
+                }
+                else {
+                    Toast.makeText(getApplicationContext(), "Falla de autenticación", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+    }
 
     public  void BuscarUsuario() throws InterruptedException {
 

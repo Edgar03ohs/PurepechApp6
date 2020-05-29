@@ -13,4 +13,5 @@
     <string name="registrate">Regístrate</string>
     <string name="confirmar_contrase_a">Confirmar contraseña</string>
     <string name="crear_cuenta">Crear Cuenta</string>
+    <string name="cerrar_sesion">Cerrar Sesion</string>
 </resources>

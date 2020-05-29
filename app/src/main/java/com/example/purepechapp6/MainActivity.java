@@ -10,18 +10,23 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 public class MainActivity extends AppCompatActivity {
 
     TextView txtEsloganInicio;
     Button btnStart;
+
+    //Agregamos atributo mAuth para administrar el registro de un nuevo usuario
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-
+        mAuth = FirebaseAuth.getInstance();
 
         btnStart = findViewById(R.id.btnStart);
 
@@ -35,5 +40,14 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-
+    @Override
+    protected void onStart() {
+        super.onStart();
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        //updateUI(currentUser);
+        if(mAuth.getCurrentUser() != null){
+            startActivity(new Intent(MainActivity.this, PerfilActivity.class));
+            finish();
+        }
+    }
 }
