@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".PerfilActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@drawable/background_uno">
 
     <TextView
         android:layout_width="match_parent"
@@ -28,5 +29,7 @@
         android:background="@android:color/holo_red_light"
         android:layout_gravity="center"
         android:layout_marginTop="100dp"/>
+
+
 
 </LinearLayout>
