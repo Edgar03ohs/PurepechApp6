@@ -19,6 +19,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 public class PerfilActivity extends AppCompatActivity {
     //Referencia a los elementos del .xml
     Button btnCerrarCesion;
+    Button btnIniciarActividad;
     TextView txtUsuarioPerfil;
     TextView txtPuntosPerfil;
 
@@ -35,6 +36,7 @@ public class PerfilActivity extends AppCompatActivity {
         setContentView(R.layout.activity_perfil);
 
         btnCerrarCesion = findViewById(R.id.btnCerrarSesion);
+        btnIniciarActividad = findViewById(R.id.btnIniciarActiv);
         txtUsuarioPerfil = findViewById(R.id.txtUsuarioPerfil);
         txtPuntosPerfil = findViewById(R.id.txtPuntosPerfil);
 
@@ -44,6 +46,15 @@ public class PerfilActivity extends AppCompatActivity {
         btnCerrarCesion.setOnClickListener(onClickCerrarSesion);
 
         obtenerInformacion();
+
+        btnIniciarActividad.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(PerfilActivity.this,"¡Comenzamos!",Toast.LENGTH_SHORT).show();
+                Intent intentComenzar = new Intent(getApplicationContext(),ConjuntosActivity.class);
+                startActivity(intentComenzar);
+            }
+        });
     }
 
     private void obtenerInformacion() {

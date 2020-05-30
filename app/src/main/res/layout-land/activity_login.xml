@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fondo_pureuno"
+    android:background="@drawable/back_puretwo"
     tools:context=".LoginActivity">
 
     <LinearLayout
@@ -30,13 +30,13 @@
             android:id="@+id/edtCorreoLog"
             android:layout_width="350dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="52dp"
+            android:layout_marginTop="20dp"
             android:layout_gravity="center"
             android:gravity="center"
             android:hint="@string/correo"
             android:inputType="textEmailAddress"
-            android:textColor="@color/colorAccent"
-            android:textColorHint="@color/colorAccent"
+            android:textColor="@color/colorPrimaryDark"
+            android:textColorHint="@color/colorPrimaryDark"
             android:textSize="18sp" />
 
 

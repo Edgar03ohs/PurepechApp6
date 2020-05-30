@@ -17,64 +17,62 @@
         android:gravity="center"
         android:text="@string/app_name"
         android:textColor="@android:color/holo_blue_bright"
-        android:textSize="50sp"
+        android:textSize="40sp"
         android:textStyle="bold"/>
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/txtPerfil"
-        android:gravity="center"
-        android:text="@string/perfil"
-        android:layout_marginTop="10dp"
-        android:fontFamily="casual"
-        android:textColor="@android:color/holo_blue_bright"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        />
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
         android:id="@+id/txtUsuarioPerfil"
         android:text=""
         android:gravity="center"
-        android:textSize="40sp"
-        android:layout_marginTop="40dp"/>
-    <TextView
+        android:textSize="30sp"
+        android:layout_marginTop="10dp"/>
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginTop="15dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:textColor="@android:color/darker_gray"
         android:text="Llevas"
         android:gravity="center"
-        android:textSize="25sp"/>
+        android:textSize="30sp"
+        android:layout_marginLeft="250dp"
+        />
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:id="@+id/txtPuntosPerfil"
         android:text=""
         android:gravity="center"
-        android:textSize="40sp"
-        android:layout_marginTop="15dp"/>
+        android:textSize="30sp"/>
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginTop="15dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@android:dimen/app_icon_size"
         android:textColor="@android:color/darker_gray"
         android:text="puntos"
         android:gravity="center"
-        android:textSize="25sp"/>
+        android:layout_gravity="right"
+        android:textSize="30sp"/>
+    </LinearLayout>
+
     <Button
         android:id="@+id/btnIniciarActiv"
         android:layout_width="250dp"
         android:layout_height="80dp"
         android:layout_gravity="center"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="10dp"
         android:background="@drawable/background_botones"
         android:text="@string/iniciar_actividad"
         android:textColor="@android:color/white"
         android:textSize="18sp" />
     <Button
-        android:layout_width="match_parent"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:id="@+id/btnCerrarSesion"
         android:text="@string/cerrar_sesion"
