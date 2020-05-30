@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -16,7 +17,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 public class PerfilActivity extends AppCompatActivity {
     //Referencia a los elementos del .xml
-    Button btnCerrarCesion;
+    Button btnCerrarCesion, btnIniciarActividad;
     TextView txtusUarioPerfil;
     TextView txtusPuntosPerfil;
 
@@ -30,12 +31,22 @@ public class PerfilActivity extends AppCompatActivity {
         setContentView(R.layout.activity_perfil);
 
         btnCerrarCesion = findViewById(R.id.btnCerrarSesion);
+        btnIniciarActividad = findViewById(R.id.btnIniciarActiv);
         txtusUarioPerfil = findViewById(R.id.txtUsuarioPerfil);
         txtusPuntosPerfil = findViewById(R.id.txtPuntosPerfil);
 
         mAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
         btnCerrarCesion.setOnClickListener(onClickCerrarSesion);
+
+        btnIniciarActividad.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(PerfilActivity.this,"¡Comenzamos!",Toast.LENGTH_SHORT).show();
+                Intent intentComenzar = new Intent(getApplicationContext(),ConjuntosActivity.class);
+                startActivity(intentComenzar);
+            }
+        });
 /*
         FirebaseUser miUsuario= mAuth.getCurrentUser();
         txtusUarioPerfil.setText(miUsuario.getDisplayName());
@@ -48,7 +59,9 @@ public class PerfilActivity extends AppCompatActivity {
             }
         });*/
 
+
     }
+
 
     View.OnClickListener onClickCerrarSesion = new View.OnClickListener() {
         @Override

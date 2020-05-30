@@ -14,4 +14,9 @@
     <string name="confirmar_contrase_a">Confirmar contraseña</string>
     <string name="crear_cuenta">Crear Cuenta</string>
     <string name="cerrar_sesion">Cerrar Sesion</string>
+    <string name="iniciar_actividad">Selecciona el campo que desees aprender</string>
+    <string name="txt_InicioConjunto">Selecciona un conjunto</string>
+    <string name="txt_NumeroConjuntos">Campos a aprender</string>
+    <string name="txt_cardAnimales">Animales</string>
+    <string name="desc">imagen</string>
 </resources>
