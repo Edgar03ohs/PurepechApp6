@@ -30,13 +30,13 @@
             android:id="@+id/edtCorreoLog"
             android:layout_width="350dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="52dp"
+            android:layout_marginTop="20dp"
             android:layout_gravity="center"
             android:gravity="center"
             android:hint="@string/correo"
             android:inputType="textEmailAddress"
-            android:textColor="@color/colorAccent"
-            android:textColorHint="@color/colorAccent"
+            android:textColor="@color/colorPrimaryDark"
+            android:textColorHint="@color/colorPrimaryDark"
             android:textSize="18sp" />
 
 

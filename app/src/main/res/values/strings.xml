@@ -19,4 +19,5 @@
     <string name="txt_NumeroConjuntos">Campos a aprender</string>
     <string name="txt_cardAnimales">Animales</string>
     <string name="desc">imagen</string>
+    <string name="perfil">Perfil</string>
 </resources>
