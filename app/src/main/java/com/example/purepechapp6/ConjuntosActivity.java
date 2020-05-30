@@ -25,7 +25,7 @@ public class ConjuntosActivity extends AppCompatActivity {
         animalescard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ConjuntosActivity.this, MainActivity.class);
+                Intent intent = new Intent(ConjuntosActivity.this, LoginActivity.class);
                 startActivity(intent);
             }
         });
