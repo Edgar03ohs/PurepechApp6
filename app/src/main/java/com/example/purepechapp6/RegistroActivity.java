@@ -16,7 +16,6 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 public class RegistroActivity extends AppCompatActivity {
@@ -29,6 +28,7 @@ public class RegistroActivity extends AppCompatActivity {
     String usuario;
     String correo;
     String contraseña;
+    String id;
     int puntos = 0;
 
     //Agregamos atributo mAuth para administrar el registro de un nuevo usuario
@@ -109,18 +109,7 @@ public class RegistroActivity extends AppCompatActivity {
         usuario = edtUsuarioReg.getText().toString();
         contraseña = edtContraseñaReg.getText().toString();
         correo = edtCorreo.getText().toString();
-        final Usuario miUsuario = new Usuario(usuario, correo, contraseña, puntos);
-        db.collection("Usuarios").document().set(miUsuario).addOnSuccessListener(new OnSuccessListener<Void>() {
-            @Override
-            public void onSuccess(Void aVoid) {
-                Toast.makeText(getApplicationContext(), "Registrado en la base de datos", Toast.LENGTH_SHORT).show();
-                }
-            }).addOnFailureListener(new OnFailureListener() {
-                @Override
-                public void onFailure(@NonNull Exception e) {
-                    Toast.makeText(getApplicationContext(), "Falla al registrar en la base de datos", Toast.LENGTH_SHORT).show();
-                }
-        });
+        id = "l";
 
         //Crea el usuario con correo y contraseña en Firebase Autentication
         mAuth.createUserWithEmailAndPassword(correo, contraseña).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -132,11 +121,25 @@ public class RegistroActivity extends AppCompatActivity {
                     Intent btnCrearCuenta = new Intent(RegistroActivity.this, PerfilActivity.class);
                     RegistroActivity.this.startActivity(btnCrearCuenta);
                     finish();
-                } else {
+
+
+        id = mAuth.getCurrentUser().getUid();
+        //Toast.makeText(getApplicationContext(),""  +id, Toast.LENGTH_SHORT).show();
+        final Usuario miUsuario = new Usuario(usuario, correo, contraseña, puntos);
+        db.collection("Usuarios").document(id).set(miUsuario).addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void aVoid) {
+                Toast.makeText(getApplicationContext(), "Registrado en la base de datos", Toast.LENGTH_SHORT).show();
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    Toast.makeText(getApplicationContext(), "Falla al registrar en la base de datos", Toast.LENGTH_SHORT).show();
+                }
+        });} else {
                     Toast.makeText(getApplicationContext(), "Hubo un problema en el registro", Toast.LENGTH_SHORT).show();
                 }
-            }
-        });
+            }});
     }
 
     /*private void crearUsuario(String correo, String contraseña) {

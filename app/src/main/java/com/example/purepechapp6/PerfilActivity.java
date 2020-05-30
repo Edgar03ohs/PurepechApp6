@@ -7,22 +7,27 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 public class PerfilActivity extends AppCompatActivity {
     //Referencia a los elementos del .xml
     Button btnCerrarCesion;
-    TextView txtusUarioPerfil;
-    TextView txtusPuntosPerfil;
+    TextView txtUsuarioPerfil;
+    TextView txtPuntosPerfil;
 
+    String usuario;
+    int puntos;
     //objeto tipo firebaseAuth
     private FirebaseAuth mAuth;
     FirebaseFirestore db;
+    DatabaseReference mDatabase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,25 +35,35 @@ public class PerfilActivity extends AppCompatActivity {
         setContentView(R.layout.activity_perfil);
 
         btnCerrarCesion = findViewById(R.id.btnCerrarSesion);
-        txtusUarioPerfil = findViewById(R.id.txtUsuarioPerfil);
-        txtusPuntosPerfil = findViewById(R.id.txtPuntosPerfil);
+        txtUsuarioPerfil = findViewById(R.id.txtUsuarioPerfil);
+        txtPuntosPerfil = findViewById(R.id.txtPuntosPerfil);
 
         mAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
+        mDatabase = FirebaseDatabase.getInstance().getReference();
         btnCerrarCesion.setOnClickListener(onClickCerrarSesion);
-/*
-        FirebaseUser miUsuario= mAuth.getCurrentUser();
-        txtusUarioPerfil.setText(miUsuario.getDisplayName());
-        String id = miUsuario.getUid();
+
+        obtenerInformacion();
+    }
+
+    private void obtenerInformacion() {
+        final String id = mAuth.getCurrentUser().getUid();
         db.collection("Usuarios").document(id).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override
             public void onSuccess(DocumentSnapshot documentSnapshot) {
-                Long aux = documentSnapshot.getLong("Puntos");
-                txtusPuntosPerfil.setText(aux.toString());
+                usuario = documentSnapshot.getString("usuario");
+                Toast.makeText(PerfilActivity.this, ""+ usuario, Toast.LENGTH_SHORT).show();
+                Long aux  = documentSnapshot.getLong ("puntos");
+                Toast.makeText(PerfilActivity.this, ""+ puntos, Toast.LENGTH_SHORT).show();
+                puntos = aux.intValue();
+                txtUsuarioPerfil.setText(usuario);
+                txtPuntosPerfil.setText(""+ puntos);
             }
-        });*/
-
+        });
     }
+
+
+
 
     View.OnClickListener onClickCerrarSesion = new View.OnClickListener() {
         @Override
