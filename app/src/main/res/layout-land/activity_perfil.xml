@@ -41,7 +41,7 @@
         android:text="Llevas"
         android:gravity="center"
         android:textSize="30sp"
-        android:layout_marginLeft="250dp"
+        android:layout_marginLeft="285dp"
         />
     <TextView
         android:layout_width="wrap_content"
@@ -49,11 +49,13 @@
         android:id="@+id/txtPuntosPerfil"
         android:text=""
         android:gravity="center"
-        android:textSize="30sp"/>
+        android:textSize="30sp"
+        android:layout_marginLeft="10dp"
+        />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@android:dimen/app_icon_size"
+        android:layout_marginLeft="10dp"
         android:textColor="@android:color/darker_gray"
         android:text="puntos"
         android:gravity="center"
@@ -79,6 +81,6 @@
         android:textColor="@android:color/white"
         android:background="@android:color/holo_red_light"
         android:layout_gravity="center"
-        android:layout_marginTop="30dp"/>
+        android:layout_marginTop="10dp"/>
 
 </LinearLayout>
