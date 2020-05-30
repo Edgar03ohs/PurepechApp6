@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "903961544972",
+    "firebase_url": "https://purepechapp6.firebaseio.com",
+    "project_id": "purepechapp6",
+    "storage_bucket": "purepechapp6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:903961544972:android:8090dda37aec94e7a2a129",
+        "android_client_info": {
+          "package_name": "com.example.purepechapp6"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "903961544972-u7231le0ir9lcr6aliugkr9lenscghbd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDUMXEjMLd2vc3ZF4QNis0bhbarA_Se-Tk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "903961544972-u7231le0ir9lcr6aliugkr9lenscghbd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
