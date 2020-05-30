@@ -67,16 +67,17 @@
 
                 <LinearLayout
                     android:orientation="vertical"
-                    android:padding="8dp"
+                    android:padding="10dp"
                     android:gravity="center"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
                     <ImageView
-                        android:layout_width="130dp"
+                        android:id="@+id/imageViewAnimales"
+                        android:layout_width="150dp"
                         android:layout_height="110dp"
-                        android:contentDescription="@string/desc"
-                        android:src="@drawable/fondo_pureuno" />
+                        android:contentDescription="@string/txt_cardAnimales"
+                        app:srcCompat="@drawable/osito_ani" />
 
                     <TextView
                         android:gravity="center"
@@ -86,6 +87,187 @@
                         android:text="@string/txt_cardAnimales"
                         android:textColor="#6F6F6F"
                         android:textSize="12sp" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewCampo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                app:cardElevation="6dp"
+                app:cardCornerRadius="14dp"
+                android:layout_margin="15dp">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:padding="10dp"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/imageViewCampo"
+                        android:layout_width="150dp"
+                        android:layout_height="110dp"
+                        android:contentDescription="@string/txt_cardCampo"
+                        app:srcCompat="@drawable/image_campo" />
+
+                    <TextView
+                        android:gravity="center"
+                        android:layout_width="117dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/txt_cardCampo"
+                        android:textColor="#6F6F6F"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewCuerpo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                app:cardElevation="6dp"
+                app:cardCornerRadius="14dp"
+                android:layout_margin="15dp">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:padding="10dp"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/imageViewCuerpo"
+                        android:layout_width="150dp"
+                        android:layout_height="110dp"
+                        android:contentDescription="@string/txt_cardCuerpo"
+                        app:srcCompat="@drawable/image_cuerpo" />
+
+                    <TextView
+                        android:gravity="center"
+                        android:layout_width="117dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/txt_cardCuerpo"
+                        android:textColor="#6F6F6F"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewNumeros"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                app:cardElevation="6dp"
+                app:cardCornerRadius="14dp"
+                android:layout_margin="15dp">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:padding="10dp"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/imageViewNumeros"
+                        android:layout_width="150dp"
+                        android:layout_height="110dp"
+                        android:contentDescription="@string/txt_cardNumeros"
+                        app:srcCompat="@drawable/image_numeros" />
+
+                    <TextView
+                        android:gravity="center"
+                        android:layout_width="117dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/txt_cardNumeros"
+                        android:textColor="#6F6F6F"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewVerbos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                app:cardElevation="6dp"
+                app:cardCornerRadius="14dp"
+                android:layout_margin="15dp">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:padding="10dp"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/imageViewVerbos"
+                        android:layout_width="150dp"
+                        android:layout_height="110dp"
+                        android:contentDescription="@string/txt_cardVerbos"
+                        app:srcCompat="@drawable/image_pato" />
+
+                    <TextView
+                        android:gravity="center"
+                        android:layout_width="117dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/txt_cardVerbos"
+                        android:textColor="#6F6F6F"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewFrutas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                app:cardElevation="6dp"
+                app:cardCornerRadius="14dp"
+                android:layout_margin="15dp">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:padding="10dp"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/imageViewFrutas"
+                        android:layout_width="150dp"
+                        android:layout_height="110dp"
+                        android:contentDescription="@string/txt_cardFrutas"
+                        app:srcCompat="@drawable/image_fruta" />
+
+                    <TextView
+                        android:gravity="center"
+                        android:layout_width="117dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/txt_cardFrutas"
+                        android:textColor="#6F6F6F"
+                        android:textSize="12sp" />
+
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 

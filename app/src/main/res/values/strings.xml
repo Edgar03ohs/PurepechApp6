@@ -20,4 +20,9 @@
     <string name="txt_cardAnimales">Animales</string>
     <string name="desc">imagen</string>
     <string name="perfil">Perfil</string>
+    <string name="txt_cardCampo">Campo</string>
+    <string name="txt_cardCuerpo">Partes del cuerpo</string>
+    <string name="txt_cardNumeros">Números</string>
+    <string name="txt_cardVerbos">Verbos</string>
+    <string name="txt_cardFrutas">Frutas y verduras</string>
 </resources>
