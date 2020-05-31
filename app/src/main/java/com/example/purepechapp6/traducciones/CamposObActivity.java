@@ -10,27 +10,27 @@ import com.example.purepechapp6.R;
 
 import java.util.ArrayList;
 
-public class AnimalesActivity extends AppCompatActivity {
+public class CamposObActivity extends AppCompatActivity {
     private ListView lvAnimales;
     private AdaptadorAnimales adaptador;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_animales);
+        setContentView(R.layout.activity_campos);
 
-        lvAnimales = findViewById(R.id.listView_ListaAnimales);
+        lvAnimales = findViewById(R.id.listView_ListaCampo);
         adaptador = new AdaptadorAnimales(this, GetArrayItems());
         lvAnimales.setAdapter(adaptador);
     }
 
     private ArrayList<EntidadAnimales> GetArrayItems(){
         ArrayList<EntidadAnimales> listItems = new ArrayList<>();
-        listItems.add(new EntidadAnimales(R.drawable.gato,"vegeta", R.drawable.letra_gato));
-        listItems.add(new EntidadAnimales(R.drawable.perro,"vegeta", R.drawable.letra_perro));
-        listItems.add(new EntidadAnimales(R.drawable.gallina,"vegeta", R.drawable.letra_gallina));
-        listItems.add(new EntidadAnimales(R.drawable.ardilla,"vegeta", R.drawable.letra_ardilla));
-        listItems.add(new EntidadAnimales(R.drawable.mariposa,"vegeta", R.drawable.letra_mariposa));
+        listItems.add(new EntidadAnimales(R.drawable.carar,"vegeta", R.drawable.clarar));
+        listItems.add(new EntidadAnimales(R.drawable.ccampesino,"vegeta", R.drawable.clcampesino));
+        listItems.add(new EntidadAnimales(R.drawable.ccosecha,"vegeta", R.drawable.clcosecha));
+        listItems.add(new EntidadAnimales(R.drawable.cmilpa,"vegeta", R.drawable.clmilpa));
+        listItems.add(new EntidadAnimales(R.drawable.csembrar,"vegeta", R.drawable.clsembrar));
 
 
         return listItems;
