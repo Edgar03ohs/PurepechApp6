@@ -11,7 +11,7 @@
         android:title="Perfil"
         android:icon="@drawable/ic_person"/>
     <item
-        android:id="@+id/perfil2"
-        android:title="Perfil2"
-        android:icon="@drawable/ic_person"/>
+        android:id="@+id/informacion"
+        android:title="Información"
+        android:icon="@drawable/ic_book_black"/>
 </menu>

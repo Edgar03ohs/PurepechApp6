@@ -56,6 +56,10 @@ public class PerfilActivity extends AppCompatActivity {
                         return true;
                     case R.id.perfil:
                         return true;
+                    case R.id.informacion:
+                        startActivity(new Intent(getApplicationContext(),InformacionActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
                 }
                 return false;
             }

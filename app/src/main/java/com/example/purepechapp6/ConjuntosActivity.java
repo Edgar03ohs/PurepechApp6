@@ -41,6 +41,10 @@ public class ConjuntosActivity extends AppCompatActivity {
                         startActivity(new Intent(getApplicationContext(),PerfilActivity.class));
                         overridePendingTransition(0,0);
                         return true;
+                    case R.id.informacion:
+                        startActivity(new Intent(getApplicationContext(),InformacionActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
                 }
                 return false;
             }
