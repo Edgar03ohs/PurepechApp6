@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fondo_pureuno"
+    android:background="@drawable/back_mainl"
     tools:context=".LoginActivity">
 
     <LinearLayout
@@ -48,7 +48,7 @@
             android:hint="@string/contrase_aLog"
             android:inputType="textPassword"
             android:textColor="@color/colorAccent"
-            android:textColorHint="@color/colorPrimaryDark"
+            android:textColorHint="@color/colorAccent"
             />
 
         <Button

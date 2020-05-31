@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/back_puretwo"
+    android:background="@drawable/back_maina"
     tools:context=".RegistroActivity">
 
     <LinearLayout
@@ -28,20 +28,7 @@
             tools:layout_editor_absoluteX="0dp"
             tools:layout_conversion_absoluteWidth="731dp" />
 
-        <TextView
-            android:id="@+id/Registrate"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="casual"
-            android:gravity="center"
-            android:text="@string/registrate"
-            android:textColor="#9F8C52"
-            android:textSize="43sp"
-            android:textStyle="bold"
-            tools:layout_conversion_absoluteHeight="100dp"
-            tools:layout_editor_absoluteY="107dp"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_conversion_absoluteWidth="731dp" />
+
 
         <GridLayout
             android:layout_width="match_parent"

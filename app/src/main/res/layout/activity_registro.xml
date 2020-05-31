@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fondo_pureuno"
+    android:background="@drawable/back_mainl"
     tools:context=".RegistroActivity">
 
     <LinearLayout
@@ -31,14 +31,13 @@
             android:layout_width="fill_parent"
             android:layout_height="100dp"
             android:layout_marginTop="10dp"
-            android:fontFamily="casual"
+            android:fontFamily="sans-serif-black"
             android:gravity="center"
             android:text="@string/registrate"
-            android:textColor="#9F8C52"
+            android:textColor="@android:color/holo_red_light"
             android:textColorHint="@android:color/holo_blue_light"
             android:textSize="43sp"
-            android:textStyle="bold"
-            />
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/edtUsuarioReg"
