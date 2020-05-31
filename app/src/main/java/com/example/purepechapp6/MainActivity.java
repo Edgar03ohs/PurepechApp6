@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
 
+        //Relacionando objetos Java con los objetos XML
         btnStart = findViewById(R.id.btnStart);
 
         btnStart.setOnClickListener(new View.OnClickListener(){
@@ -43,8 +44,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-        //updateUI(currentUser);
         if(mAuth.getCurrentUser() != null){
             startActivity(new Intent(MainActivity.this, PerfilActivity.class));
             finish();

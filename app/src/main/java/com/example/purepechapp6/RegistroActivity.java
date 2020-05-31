@@ -58,10 +58,14 @@ public class RegistroActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                //Pasando el contenido de los EditText a Strings
+
                 String usuario = edtUsuarioReg.getText().toString();
                 String contraseña = edtContraseñaReg.getText().toString();
                 String correo = edtCorreo.getText().toString();
                 String confContra = edtConfContra.getText().toString();
+
+                //Verificando que los campos no estén vacíos, la contraseña sea de al menos 6 dígitos y coincida con su confirmación
 
                 if(confContra.length() ==0){
                     Toast.makeText(getApplicationContext(), "Debes confirmar la contraseña", Toast.LENGTH_SHORT).show();
@@ -122,6 +126,7 @@ public class RegistroActivity extends AppCompatActivity {
                     RegistroActivity.this.startActivity(btnCrearCuenta);
                     finish();
 
+//Se registran los valores de los campos en la base de datos de firebase
 
         id = mAuth.getCurrentUser().getUid();
         //Toast.makeText(getApplicationContext(),""  +id, Toast.LENGTH_SHORT).show();

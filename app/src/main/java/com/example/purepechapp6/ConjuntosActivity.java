@@ -24,10 +24,10 @@ public class ConjuntosActivity extends AppCompatActivity {
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
 
-        //Set perfil selected
+        //La opcion seleccionada del bottom navigation bar
         bottomNavigationView.setSelectedItemId(R.id.aprender);
 
-        //Perform ItemSelected
+        //ir a la actividad correspondiente seleccionada
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {

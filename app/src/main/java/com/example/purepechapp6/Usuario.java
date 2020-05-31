@@ -5,7 +5,7 @@ public class Usuario {
     private String correo;
     private String contraseña;
     private int puntos;
-
+//Constructores, getters y setters
     public String getUsuario() {
         return usuario;
     }

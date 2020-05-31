@@ -22,14 +22,16 @@ import com.google.firebase.firestore.FirebaseFirestore;
 public class PerfilActivity extends AppCompatActivity {
     //Referencia a los elementos del .xml
     Button btnCerrarCesion;
-    Button btnIniciarActividad;
     TextView txtUsuarioPerfil;
     TextView txtPuntosPerfil;
 
     String usuario;
     int puntos;
-    //objeto tipo firebaseAuth
+
+    //Agregamos atributo mAuth para administrar el registro de un nuevo usuario
     private FirebaseAuth mAuth;
+
+    //Instancia de la base de datos de Firestore
     FirebaseFirestore db;
     DatabaseReference mDatabase;
 
@@ -40,10 +42,10 @@ public class PerfilActivity extends AppCompatActivity {
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
 
-        //Set perfil selected
+        //La opcion seleccionada del bottom navigation bar
         bottomNavigationView.setSelectedItemId(R.id.perfil);
 
-        //Perform ItemSelected
+        //ir a la actividad correspondiente seleccionada
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
@@ -59,6 +61,7 @@ public class PerfilActivity extends AppCompatActivity {
             }
         });
 
+        //Relacionando objetos Java con los objetos XML
         btnCerrarCesion = findViewById(R.id.btnCerrarSesion);
         txtUsuarioPerfil = findViewById(R.id.txtUsuarioPerfil);
         txtPuntosPerfil = findViewById(R.id.txtPuntosPerfil);
@@ -86,9 +89,12 @@ public class PerfilActivity extends AppCompatActivity {
             @Override
             public void onSuccess(DocumentSnapshot documentSnapshot) {
                 usuario = documentSnapshot.getString("usuario");
-                Toast.makeText(PerfilActivity.this, ""+ usuario, Toast.LENGTH_SHORT).show();
+                Toast.makeText(PerfilActivity.this, "Bienvenido, "+ usuario, Toast.LENGTH_SHORT).show();
                 Long aux  = documentSnapshot.getLong ("puntos");
-                Toast.makeText(PerfilActivity.this, ""+ puntos, Toast.LENGTH_SHORT).show();
+
+                //Toast como este son para verificar que se haya obtenido bien el dato durante las pruebas
+                //Toast.makeText(PerfilActivity.this, ""+ puntos, Toast.LENGTH_SHORT).show();
+
                 puntos = aux.intValue();
                 txtUsuarioPerfil.setText(usuario);
                 txtPuntosPerfil.setText(""+ puntos);

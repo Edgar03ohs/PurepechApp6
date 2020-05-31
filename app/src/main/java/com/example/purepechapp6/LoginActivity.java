@@ -13,10 +13,12 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 public class LoginActivity extends AppCompatActivity {
@@ -29,9 +31,10 @@ public class LoginActivity extends AppCompatActivity {
     EditText edtCorreoLog;
 
     String UsuarioLog;
+    String usuario;
     String ContraseñaLog;
     String CorreoLog;
-
+//era para el metodo que no incluis firebase
     /*
     String usuario;
     String password;
@@ -49,6 +52,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        //Relacionando objetos Java con los objetos XML
         edtCorreoLog = findViewById(R.id.edtCorreoLog);
         edtContraseñaLog = findViewById(R.id.edtContraseñaLog);
         btnIniciarSesion = findViewById(R.id.btnIniciarSesion);
@@ -67,6 +71,9 @@ public class LoginActivity extends AppCompatActivity {
 
             CorreoLog = edtCorreoLog.getText().toString();
             ContraseñaLog = edtContraseñaLog.getText().toString();
+
+            //era para metodo sin firebase
+
             /*try {
                 Bundle bundleRegistro = getIntent().getExtras();
                 usuario = bundleRegistro.getString(getString(R.string.usuario));
@@ -83,6 +90,9 @@ public class LoginActivity extends AppCompatActivity {
             {
                 Toast.makeText(getApplicationContext(),"Contraseña incorrecta, " + UsuarioLog,Toast.LENGTH_SHORT).show();
             }*/
+
+            //Se verifica que los campos no estén vacíos
+
             if (ContraseñaLog.length() !=0 && CorreoLog.length() !=0) {
                 ingresarExistente();
             }
@@ -95,7 +105,8 @@ public class LoginActivity extends AppCompatActivity {
             else if(CorreoLog.length() == 0 && ContraseñaLog.length() ==0)
             {
                 Toast.makeText(getApplicationContext(), "Los campos están vacíos", Toast.LENGTH_SHORT).show();
-            }/*
+            }
+            //Hilo para evitar interrupciones y pueda llevarse a cabo el inicio de seión
             new Thread(new Runnable() {
                 @Override
                 public void run() {
@@ -109,7 +120,7 @@ public class LoginActivity extends AppCompatActivity {
                     }
                     Log.d("Hilo","Hilo Terminado");
                 }
-            }).start();*/
+            }).start();
         }
     };
 
@@ -129,10 +140,17 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
-                    Toast.makeText(getApplicationContext(),"Bienvenido, has ingresado correctamente, " +  CorreoLog, Toast.LENGTH_SHORT).show();
-                    Intent btnIniciarSesion = new Intent(getApplicationContext(), PerfilActivity.class);
-                    LoginActivity.this.startActivity(btnIniciarSesion);
-                    finish();
+                    /*db.collection("Usuarios").document(mAuth.getCurrentUser().getUid()).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                        @Override
+                        public void onSuccess(DocumentSnapshot documentSnapshot) {
+                            usuario = documentSnapshot.getString("usuario");
+                            Toast.makeText(getApplicationContext(),"Bienvenido, has ingresado correctamente, " +  usuario, Toast.LENGTH_SHORT).show();
+                            */
+                            Intent btnIniciarSesion = new Intent(getApplicationContext(), PerfilActivity.class);
+                            LoginActivity.this.startActivity(btnIniciarSesion);
+                            finish();
+                        //}
+                    //});
                 }
                 else {
                     Toast.makeText(getApplicationContext(), "Falla de autenticación", Toast.LENGTH_SHORT).show();
