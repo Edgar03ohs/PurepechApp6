@@ -12,6 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".EjerciciosActivity"></activity>
+        <activity android:name=".traducciones.AnimalesActivity"/>
         <activity android:name=".PerfilActivity" />
         <activity android:name=".ConjuntosActivity" />
         <activity android:name=".RegistroActivity" />
