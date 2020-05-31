@@ -17,6 +17,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class ConjuntosActivity extends AppCompatActivity {
 
     private CardView animalescard;
+    private CardView camposcard, cuerpocard, numeroscard, verboscard, frutascard;
 
     @Override
     protected void onCreate (Bundle savedInstanceState) {
@@ -47,6 +48,11 @@ public class ConjuntosActivity extends AppCompatActivity {
         //definiendo cards
 
         animalescard = findViewById(R.id.cardViewAnimales);
+        camposcard = findViewById(R.id.cardViewCampo);
+        cuerpocard = findViewById(R.id.cardViewCuerpo);
+        numeroscard = findViewById(R.id.cardViewNumeros);
+        verboscard = findViewById(R.id.cardViewVerbos);
+        frutascard = findViewById(R.id.cardViewFrutas);
 
         animalescard.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,5 +61,41 @@ public class ConjuntosActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        camposcard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ConjuntosActivity.this, AnimalesActivity.class);
+                startActivity(intent);
+            }
+        });
+        cuerpocard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ConjuntosActivity.this, AnimalesActivity.class);
+                startActivity(intent);
+            }
+        });
+        numeroscard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ConjuntosActivity.this, AnimalesActivity.class);
+                startActivity(intent);
+            }
+        });
+        verboscard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ConjuntosActivity.this, AnimalesActivity.class);
+                startActivity(intent);
+            }
+        });
+        frutascard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ConjuntosActivity.this, AnimalesActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 }
