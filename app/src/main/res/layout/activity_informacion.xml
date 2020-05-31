@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:layout_marginLeft="10dp"
+        android:layout_marginLeft="8dp"
         android:text="La lengua purépecha"
         android:textColor="@android:color/black"
         android:layout_alignParentTop="true"
@@ -20,6 +20,7 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginLeft="8dp"
         android:layout_below="@id/txtLenguaPurepecha"
         android:layout_above="@id/bottom_navigation">
 
@@ -36,7 +37,8 @@
             \n\nEn este sentido, conserva rasgos poco frecuentes como la presencia de dos fonemas vibrantes, tales como el simple (r) y el retroflejo (ɽ); además, las frases siguen un orden común compuesto por sujeto + objeto + verbo, conteniendo muchos sufijos e inclusive más de una raíz.
             \n\nIgualmente, las vocales que se encuentran al final de las palabras, muchas veces se omiten en la pronunciación. No obstante, la única característica que la asemeja con otras lenguas mesoamericanas, es la presencia de un sistema vigesimal de numeración.
             \n\nEn el purépecha se distinguen cuatro dialectos regionales, como el de la meseta, el lacustre, el central y el de la ciénaga.
-            \n\nEl purépecha se compone de palabras acompañadas de partículas que indican número, género y caso: uarichaeri significa 'de las señoras', de uari 'señora', cha 'plural', y eri 'de'. Uaritsichaeri significa de las dos señoras, pues tsi es un contracto de tsimani, dos. No hay prefijos, sólo sufijos tras la raíz que son muy abundantes"
+            \n\nEl purépecha se compone de palabras acompañadas de partículas que indican número, género y caso: uarichaeri significa 'de las señoras', de uari 'señora', cha 'plural', y eri 'de'. Uaritsichaeri significa de las dos señoras, pues tsi es un contracto de tsimani, dos. No hay prefijos, sólo sufijos tras la raíz que son muy abundantes
+            \n\n"
             android:textColor="@android:color/black"
             android:textSize="20sp"/>
 
