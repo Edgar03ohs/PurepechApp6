@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import com.example.purepechapp6.traducciones.AnimalesActivity;
+import com.example.purepechapp6.traducciones.CamposObActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 //import com.example.purepechapp.conjuntos.ListaAnimales;
@@ -64,7 +65,7 @@ public class ConjuntosActivity extends AppCompatActivity {
         camposcard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ConjuntosActivity.this, AnimalesActivity.class);
+                Intent intent = new Intent(ConjuntosActivity.this, CamposObActivity.class);
                 startActivity(intent);
             }
         });
