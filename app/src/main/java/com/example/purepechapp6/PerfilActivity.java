@@ -60,7 +60,6 @@ public class PerfilActivity extends AppCompatActivity {
         });
 
         btnCerrarCesion = findViewById(R.id.btnCerrarSesion);
-        btnIniciarActividad = findViewById(R.id.btnIniciarActiv);
         txtUsuarioPerfil = findViewById(R.id.txtUsuarioPerfil);
         txtPuntosPerfil = findViewById(R.id.txtPuntosPerfil);
 
