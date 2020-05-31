@@ -64,7 +64,7 @@
 
             <ListView
                 android:id="@+id/listView_ListaAnimales"
-                android:layout_width="300dp"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent">
 
             </ListView>

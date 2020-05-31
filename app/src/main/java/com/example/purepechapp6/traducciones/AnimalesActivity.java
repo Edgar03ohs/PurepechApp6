@@ -26,12 +26,12 @@ public class AnimalesActivity extends AppCompatActivity {
 
     private ArrayList<EntidadAnimales> GetArrayItems(){
         ArrayList<EntidadAnimales> listItems = new ArrayList<>();
-        listItems.add(new EntidadAnimales(R.drawable.image_campo,"vegeta", R.drawable.background_uno));
-        listItems.add(new EntidadAnimales(R.drawable.image_campo,"vegeta", R.drawable.background_uno));
-        listItems.add(new EntidadAnimales(R.drawable.image_campo,"vegeta", R.drawable.background_uno));
-        listItems.add(new EntidadAnimales(R.drawable.image_campo,"vegeta", R.drawable.background_uno));
-        listItems.add(new EntidadAnimales(R.drawable.image_campo,"vegeta", R.drawable.background_uno));
-        listItems.add(new EntidadAnimales(R.drawable.image_campo,"vegeta", R.drawable.background_uno));
+        listItems.add(new EntidadAnimales(R.drawable.gato,"vegeta", R.drawable.letra_gato));
+        listItems.add(new EntidadAnimales(R.drawable.perro,"vegeta", R.drawable.letra_perro));
+        listItems.add(new EntidadAnimales(R.drawable.gallina,"vegeta", R.drawable.letra_gallina));
+        listItems.add(new EntidadAnimales(R.drawable.ardilla,"vegeta", R.drawable.letra_ardilla));
+        listItems.add(new EntidadAnimales(R.drawable.mariposa,"vegeta", R.drawable.letra_mariposa));
+
 
         return listItems;
     }
