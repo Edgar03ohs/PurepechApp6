@@ -11,6 +11,10 @@ import androidx.cardview.widget.CardView;
 
 import com.example.purepechapp6.traducciones.AnimalesActivity;
 import com.example.purepechapp6.traducciones.CamposObActivity;
+import com.example.purepechapp6.traducciones.CuerpoActivity;
+import com.example.purepechapp6.traducciones.NumerosActivity;
+import com.example.purepechapp6.traducciones.VerbosActivity;
+import com.example.purepechapp6.traducciones.VerduraActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 //import com.example.purepechapp.conjuntos.ListaAnimales;
@@ -76,28 +80,28 @@ public class ConjuntosActivity extends AppCompatActivity {
         cuerpocard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ConjuntosActivity.this, AnimalesActivity.class);
+                Intent intent = new Intent(ConjuntosActivity.this, CuerpoActivity.class);
                 startActivity(intent);
             }
         });
         numeroscard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ConjuntosActivity.this, AnimalesActivity.class);
+                Intent intent = new Intent(ConjuntosActivity.this, NumerosActivity.class);
                 startActivity(intent);
             }
         });
         verboscard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ConjuntosActivity.this, AnimalesActivity.class);
+                Intent intent = new Intent(ConjuntosActivity.this, VerbosActivity.class);
                 startActivity(intent);
             }
         });
         frutascard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ConjuntosActivity.this, AnimalesActivity.class);
+                Intent intent = new Intent(ConjuntosActivity.this, VerduraActivity.class);
                 startActivity(intent);
             }
         });
