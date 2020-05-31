@@ -8,28 +8,28 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/bottom_navigation">
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottom_navigation">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="30dp"
+                android:orientation="horizontal"
                 android:layout_marginTop="40dp"
                 android:layout_marginRight="30dp"
-                android:baselineAligned="false"
-                android:orientation="horizontal">
+                android:layout_marginLeft="30dp"
+                android:baselineAligned="false">
 
                 <LinearLayout
+                    android:orientation="vertical"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:orientation="vertical">
+                    android:layout_weight="4">
 
                     <TextView
                         android:id="@+id/txtPerfil"
@@ -43,8 +43,8 @@
                         android:id="@+id/txtNumeroCampos"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="6dp"
                         android:text="@string/txt_NumeroConjuntos"
+                        android:layout_marginTop="6dp"
                         android:textColor="#FFF"
                         android:textSize="14sp" />
 

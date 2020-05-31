@@ -35,6 +35,7 @@
             android:gravity="center"
             android:text="@string/registrate"
             android:textColor="#9F8C52"
+            android:textColorHint="@android:color/holo_blue_light"
             android:textSize="43sp"
             android:textStyle="bold"
             />
@@ -49,7 +50,8 @@
             android:hint="@string/usuario"
             android:inputType="textPersonName"
             android:textColor="@color/colorAccent"
-            android:textColorHint="@color/colorPrimaryDark" />
+            android:textColorHint="@android:color/holo_blue_light"
+            />
 
         <EditText
             android:id="@+id/edtCorreo"
@@ -61,7 +63,8 @@
             android:hint="@string/correo"
             android:inputType="textEmailAddress"
             android:textColor="@color/colorAccent"
-            android:textColorHint="@color/colorPrimaryDark" />
+            android:textColorHint="@android:color/holo_blue_light"
+            />
 
 
         <EditText
@@ -74,7 +77,8 @@
             android:hint="@string/contrase_aReg"
             android:inputType="textPassword"
             android:textColor="@color/colorAccent"
-            android:textColorHint="@color/colorPrimaryDark" />
+            android:textColorHint="@android:color/holo_blue_light"
+            />
 
         <EditText
             android:id="@+id/edtConfContra"
@@ -86,7 +90,8 @@
             android:hint="@string/confirmar_contrase_a"
             android:inputType="textPassword"
             android:textColor="@color/colorAccent"
-            android:textColorHint="@color/colorPrimaryDark" />
+            android:textColorHint="@android:color/holo_blue_light"
+            />
 
         <Button
             android:id="@+id/btnCrearCuenta"

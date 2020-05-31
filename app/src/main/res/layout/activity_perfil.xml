@@ -1,86 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PerfilActivity"
-    android:orientation="vertical"
-    android:background="@drawable/background_uno">
+    android:background="@drawable/background_uno"
+    tools:context=".PerfilActivity">
 
-    <TextView
-        android:id="@+id/PurepechApp"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:fontFamily="casual"
-        android:gravity="center"
-        android:text="@string/app_name"
-        android:textColor="@android:color/holo_blue_bright"
-        android:textSize="50sp"
-        android:textStyle="bold"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/txtPerfil"
-        android:gravity="center"
-        android:text="@string/perfil"
-        android:layout_marginTop="10dp"
-        android:fontFamily="casual"
-        android:textColor="@android:color/holo_blue_bright"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        />
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:id="@+id/txtUsuarioPerfil"
-        android:text=""
-        android:gravity="center"
-        android:textSize="40sp"
-        android:layout_marginTop="40dp"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginTop="15dp"
-        android:textColor="@android:color/darker_gray"
-        android:text="Llevas"
-        android:gravity="center"
-        android:textSize="25sp"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:id="@+id/txtPuntosPerfil"
-        android:text=""
-        android:gravity="center"
-        android:textSize="40sp"
-        android:layout_marginTop="15dp"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginTop="15dp"
-        android:textColor="@android:color/darker_gray"
-        android:text="puntos"
-        android:gravity="center"
-        android:textSize="25sp"/>
-    <Button
-        android:id="@+id/btnIniciarActiv"
-        android:layout_width="250dp"
-        android:layout_height="80dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="30dp"
-        android:background="@drawable/background_botones"
-        android:text="@string/iniciar_actividad"
-        android:textColor="@android:color/white"
-        android:textSize="18sp" />
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/btnCerrarSesion"
-        android:text="@string/cerrar_sesion"
-        android:textColor="@android:color/white"
-        android:background="@android:color/holo_red_light"
-        android:layout_gravity="center"
-        android:layout_marginTop="30dp"/>
+        android:orientation="vertical">
 
-</LinearLayout>
+
+        <TextView
+            android:id="@+id/PurepechApp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="casual"
+            android:gravity="center"
+            android:text="@string/app_name"
+            android:textColor="@android:color/holo_blue_bright"
+            android:textSize="50sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txtPerfil"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="casual"
+            android:gravity="center"
+            android:text="@string/perfil"
+            android:textColor="@android:color/holo_blue_bright"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txtUsuarioPerfil"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="60dp"
+            android:gravity="center"
+            android:text=""
+            android:textSize="40sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="25dp"
+            android:gravity="center"
+            android:text="Llevas"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/txtPuntosPerfil"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="25dp"
+            android:gravity="center"
+            android:text=""
+            android:textSize="40sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="25dp"
+            android:gravity="center"
+            android:text="puntos"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="25sp" />
+
+        <Button
+            android:id="@+id/btnCerrarSesion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="70dp"
+            android:background="@android:color/holo_red_light"
+            android:text="@string/cerrar_sesion"
+            android:textColor="@android:color/white" />
+
+    </LinearLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:itemBackground="@color/colorPrimary"
+        app:itemIconTint="@drawable/selector"
+        app:itemTextColor="@drawable/selector"
+        app:menu="@menu/menu_navigation" />
+
+</RelativeLayout>

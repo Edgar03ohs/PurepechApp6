@@ -1,15 +1,18 @@
 package com.example.purepechapp6;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -35,6 +38,27 @@ public class PerfilActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_perfil);
 
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
+
+        //Set perfil selected
+        bottomNavigationView.setSelectedItemId(R.id.perfil);
+
+        //Perform ItemSelected
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                switch (menuItem.getItemId()){
+                    case R.id.aprender:
+                        startActivity(new Intent(getApplicationContext(),ConjuntosActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.perfil:
+                        return true;
+                }
+                return false;
+            }
+        });
+
         btnCerrarCesion = findViewById(R.id.btnCerrarSesion);
         btnIniciarActividad = findViewById(R.id.btnIniciarActiv);
         txtUsuarioPerfil = findViewById(R.id.txtUsuarioPerfil);
@@ -46,7 +70,7 @@ public class PerfilActivity extends AppCompatActivity {
         btnCerrarCesion.setOnClickListener(onClickCerrarSesion);
 
         obtenerInformacion();
-
+/*
         btnIniciarActividad.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
@@ -54,7 +78,7 @@ public class PerfilActivity extends AppCompatActivity {
                 Intent intentComenzar = new Intent(getApplicationContext(),ConjuntosActivity.class);
                 startActivity(intentComenzar);
             }
-        });
+        });*/
     }
 
     private void obtenerInformacion() {
