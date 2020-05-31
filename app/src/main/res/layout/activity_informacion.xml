@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".InformacionActivity">
+
+    <TextView
+        android:id="@+id/txtLenguaPurepecha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="10dp"
+        android:text="La lengua purépecha"
+        android:textColor="@android:color/black"
+        android:layout_alignParentTop="true"
+        android:textSize="30sp"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/txtLenguaPurepecha">
+
+        <TextView
+            android:id="@+id/txtInformacion"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:text="Historia
+            \n\nEl alfabeto latino se usó desde principios del siglo XVI para escribir la lengua purépecha.
+            \n\nA finales de los años 70, se constituyó la Academia de la Lengua Purépecha (P'urhe Uandakueri Juramukua), con el fin de regular la escritura y la gramática del idioma purépecha. Se adoptó el Alfabeto Fonético Internacional con el fin de representar los sonidos que el alfabeto latino era incapaz de plasmar, como las explosivas p', t', r', o las nasales rh, th.
+            \n\nIdioma y gramática
+            \n\nConocido igualmente como tarasco, la lengua purépecha presenta tipologías especiales que la hacen única y singular, ya que no posee relación con otros idiomas procedentes de la etapa precolombina mexicana.
+            \n\nEn este sentido, conserva rasgos poco frecuentes como la presencia de dos fonemas vibrantes, tales como el simple (r) y el retroflejo (ɽ); además, las frases siguen un orden común compuesto por sujeto + objeto + verbo, conteniendo muchos sufijos e inclusive más de una raíz.
+            \n\nIgualmente, las vocales que se encuentran al final de las palabras, muchas veces se omiten en la pronunciación. No obstante, la única característica que la asemeja con otras lenguas mesoamericanas, es la presencia de un sistema vigesimal de numeración.
+            \n\nEn el purépecha se distinguen cuatro dialectos regionales, como el de la meseta, el lacustre, el central y el de la ciénaga.
+            \n\nEl purépecha se compone de palabras acompañadas de partículas que indican número, género y caso: uarichaeri significa 'de las señoras', de uari 'señora', cha 'plural', y eri 'de'. Uaritsichaeri significa de las dos señoras, pues tsi es un contracto de tsimani, dos. No hay prefijos, sólo sufijos tras la raíz que son muy abundantes"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"/>
+
+
+    </ScrollView>
+
+</RelativeLayout>

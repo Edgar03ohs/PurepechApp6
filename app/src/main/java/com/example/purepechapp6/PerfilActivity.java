@@ -89,7 +89,8 @@ public class PerfilActivity extends AppCompatActivity {
             @Override
             public void onSuccess(DocumentSnapshot documentSnapshot) {
                 usuario = documentSnapshot.getString("usuario");
-                Toast.makeText(PerfilActivity.this, "Bienvenido, "+ usuario, Toast.LENGTH_SHORT).show();
+                //Toast como este son para verificar que se haya obtenido bien el dato durante las pruebas
+                //Toast.makeText(PerfilActivity.this, "Bienvenido, "+ usuario, Toast.LENGTH_SHORT).show();
                 Long aux  = documentSnapshot.getLong ("puntos");
 
                 //Toast como este son para verificar que se haya obtenido bien el dato durante las pruebas

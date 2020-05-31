@@ -11,8 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".EjerciciosActivity"></activity>
-        <activity android:name=".traducciones.AnimalesActivity"/>
+        <activity android:name=".InformacionActivity"></activity>
+        <activity android:name=".EjerciciosActivity" />
+        <activity android:name=".traducciones.AnimalesActivity" />
         <activity android:name=".PerfilActivity" />
         <activity android:name=".ConjuntosActivity" />
         <activity android:name=".RegistroActivity" />

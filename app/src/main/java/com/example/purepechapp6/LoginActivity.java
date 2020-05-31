@@ -140,17 +140,16 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
-                    /*db.collection("Usuarios").document(mAuth.getCurrentUser().getUid()).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                    db.collection("Usuarios").document(mAuth.getCurrentUser().getUid()).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                         @Override
                         public void onSuccess(DocumentSnapshot documentSnapshot) {
                             usuario = documentSnapshot.getString("usuario");
                             Toast.makeText(getApplicationContext(),"Bienvenido, has ingresado correctamente, " +  usuario, Toast.LENGTH_SHORT).show();
-                            */
                             Intent btnIniciarSesion = new Intent(getApplicationContext(), PerfilActivity.class);
                             LoginActivity.this.startActivity(btnIniciarSesion);
                             finish();
-                        //}
-                    //});
+                        }
+                    });
                 }
                 else {
                     Toast.makeText(getApplicationContext(), "Falla de autenticación", Toast.LENGTH_SHORT).show();

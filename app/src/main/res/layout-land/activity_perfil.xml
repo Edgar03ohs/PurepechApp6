@@ -34,7 +34,7 @@
             android:gravity="center"
             android:text="@string/perfil"
             android:textColor="@android:color/holo_blue_bright"
-            android:textSize="30sp"
+            android:textSize="25sp"
             android:textStyle="bold" />
 
         <TextView
@@ -51,7 +51,7 @@
             android:gravity="center"
             android:text="Llevas"
             android:textColor="@android:color/darker_gray"
-            android:textSize="25sp" />
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/txtPuntosPerfil"
@@ -59,7 +59,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text=""
-            android:textSize="30sp" />
+            android:textSize="25sp" />
 
         <TextView
             android:layout_width="match_parent"
@@ -67,7 +67,7 @@
             android:gravity="center"
             android:text="puntos"
             android:textColor="@android:color/darker_gray"
-            android:textSize="25sp" />
+            android:textSize="20sp" />
 
         <Button
             android:id="@+id/btnCerrarSesion"
@@ -77,7 +77,8 @@
             android:background="@android:color/holo_red_light"
             android:text="@string/cerrar_sesion"
             android:textColor="@android:color/white"
-            android:layout_marginTop="15dp"/>
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp"/>
 
     </LinearLayout>
 
