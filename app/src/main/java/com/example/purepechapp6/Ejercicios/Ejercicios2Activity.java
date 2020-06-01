@@ -1,4 +1,4 @@
-package com.example.purepechapp6;
+package com.example.purepechapp6.Ejercicios;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,6 +10,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.purepechapp6.ConjuntosActivity;
+import com.example.purepechapp6.InformacionActivity;
+import com.example.purepechapp6.PerfilActivity;
+import com.example.purepechapp6.R;
+import com.example.purepechapp6.Usuario;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -19,7 +24,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
-public class EjerciciosActivity extends AppCompatActivity implements View.OnClickListener{
+public class Ejercicios2Activity extends AppCompatActivity implements View.OnClickListener{
 
     String usuario;
     String correo;
@@ -37,7 +42,7 @@ public class EjerciciosActivity extends AppCompatActivity implements View.OnClic
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ejercicios);
+        setContentView(R.layout.activity_ejercicios2);
 
         //Relacionando los java con los xml
         Button btnOpcion1 = findViewById(R.id.btnOpcion1);
@@ -65,15 +70,15 @@ public class EjerciciosActivity extends AppCompatActivity implements View.OnClic
                     case R.id.opEjercicios:
                         return true;
                     case R.id.opPerfil:
-                        startActivity(new Intent(getApplicationContext(),PerfilActivity.class));
+                        startActivity(new Intent(getApplicationContext(), PerfilActivity.class));
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.opInformacion:
-                        startActivity(new Intent(getApplicationContext(),InformacionActivity.class));
+                        startActivity(new Intent(getApplicationContext(), InformacionActivity.class));
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.opAprender:
-                        startActivity(new Intent(getApplicationContext(),ConjuntosActivity.class));
+                        startActivity(new Intent(getApplicationContext(), ConjuntosActivity.class));
                         overridePendingTransition(0,0);
                         return true;
                 }
@@ -114,13 +119,13 @@ public class EjerciciosActivity extends AppCompatActivity implements View.OnClic
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.btnOpcion1:
-                Toast.makeText(this, "Incorrecto", Toast.LENGTH_SHORT).show();
-                break;
-            case R.id.btnOpcion2:
                 obtenerInformacion();
                 break;
+            case R.id.btnOpcion2:
+                Toast.makeText(this, "Incorrecto", Toast.LENGTH_SHORT).show();
+                break;
             case R.id.btnOpcion3:
-                Toast.makeText(this, "Prueba de nuevo", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Incorrecto", Toast.LENGTH_SHORT).show();
                 break;
         }
 

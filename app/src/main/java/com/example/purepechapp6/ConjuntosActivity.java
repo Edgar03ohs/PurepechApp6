@@ -9,6 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import com.example.purepechapp6.Ejercicios.EjerciciosActivity;
 import com.example.purepechapp6.traducciones.AnimalesActivity;
 import com.example.purepechapp6.traducciones.CamposObActivity;
 import com.example.purepechapp6.traducciones.CuerpoActivity;
@@ -48,7 +49,7 @@ public class ConjuntosActivity extends AppCompatActivity {
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.opEjercicios:
-                        startActivity(new Intent(getApplicationContext(),EjerciciosActivity.class));
+                        startActivity(new Intent(getApplicationContext(), EjerciciosActivity.class));
                         overridePendingTransition(0,0);
                         return true;
                 }

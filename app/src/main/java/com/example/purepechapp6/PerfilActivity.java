@@ -9,8 +9,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
+import com.example.purepechapp6.Ejercicios.EjerciciosActivity;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
@@ -61,7 +61,7 @@ public class PerfilActivity extends AppCompatActivity {
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.opEjercicios:
-                        startActivity(new Intent(getApplicationContext(),EjerciciosActivity.class));
+                        startActivity(new Intent(getApplicationContext(), EjerciciosActivity.class));
                         overridePendingTransition(0,0);
                         return true;
                 }

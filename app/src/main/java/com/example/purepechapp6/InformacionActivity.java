@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.example.purepechapp6.Ejercicios.EjerciciosActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class InformacionActivity extends AppCompatActivity {
@@ -36,7 +37,7 @@ public class InformacionActivity extends AppCompatActivity {
                     case R.id.opInformacion:
                         return true;
                     case R.id.opEjercicios:
-                        startActivity(new Intent(getApplicationContext(),EjerciciosActivity.class));
+                        startActivity(new Intent(getApplicationContext(), EjerciciosActivity.class));
                         overridePendingTransition(0,0);
                         return true;
                 }
