@@ -11,6 +11,7 @@ import com.example.purepechapp6.R;
 import java.util.ArrayList;
 
 public class CuerpoActivity extends AppCompatActivity {
+    //Se crea una listView y el adaptador
     private ListView lvAnimales;
     private AdaptadorAnimales adaptador;
 
@@ -23,6 +24,8 @@ public class CuerpoActivity extends AppCompatActivity {
         adaptador = new AdaptadorAnimales(this, GetArrayItems());
         lvAnimales.setAdapter(adaptador);
     }
+
+    //Se agregan los archivos que serán mostrados en el arrayList de partes del cuerpo
 
     private ArrayList<EntidadAnimales> GetArrayItems(){
         ArrayList<EntidadAnimales> listItems = new ArrayList<>();

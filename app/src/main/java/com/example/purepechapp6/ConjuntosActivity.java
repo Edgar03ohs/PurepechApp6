@@ -17,8 +17,6 @@ import com.example.purepechapp6.traducciones.VerbosActivity;
 import com.example.purepechapp6.traducciones.VerduraActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-//import com.example.purepechapp.conjuntos.ListaAnimales;
-
 public class ConjuntosActivity extends AppCompatActivity {
 
     private CardView animalescard;
@@ -62,6 +60,8 @@ public class ConjuntosActivity extends AppCompatActivity {
         numeroscard = findViewById(R.id.cardViewNumeros);
         verboscard = findViewById(R.id.cardViewVerbos);
         frutascard = findViewById(R.id.cardViewFrutas);
+
+        //activación de las actividades subsecuentes a las card View
 
         animalescard.setOnClickListener(new View.OnClickListener() {
             @Override

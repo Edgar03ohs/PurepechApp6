@@ -11,6 +11,7 @@ import com.example.purepechapp6.R;
 import java.util.ArrayList;
 
 public class VerduraActivity extends AppCompatActivity {
+    //Se crea una listView y el adaptador
     private ListView lvAnimales;
     private AdaptadorAnimales adaptador;
 
@@ -24,6 +25,7 @@ public class VerduraActivity extends AppCompatActivity {
         lvAnimales.setAdapter(adaptador);
     }
 
+    //Se agregan los archivos que serán mostrados en el arrayList de frutas, verduras y semillas
     private ArrayList<EntidadAnimales> GetArrayItems(){
         ArrayList<EntidadAnimales> listItems = new ArrayList<>();
         listItems.add(new EntidadAnimales(R.drawable.hchile,"vegeta", R.drawable.hlchile));
@@ -31,7 +33,6 @@ public class VerduraActivity extends AppCompatActivity {
         listItems.add(new EntidadAnimales(R.drawable.hfrijol,"vegeta", R.drawable.hlfrijol));
         listItems.add(new EntidadAnimales(R.drawable.hmaiz,"vegeta", R.drawable.hlmaiz));
         listItems.add(new EntidadAnimales(R.drawable.hnopal,"vegeta", R.drawable.hlnopal));
-
 
         return listItems;
     }

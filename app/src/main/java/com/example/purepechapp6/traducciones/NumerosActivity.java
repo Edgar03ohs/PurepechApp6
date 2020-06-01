@@ -16,6 +16,7 @@ public class NumerosActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
+        //Se crea una listView y el adaptador
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_numeros);
 
@@ -24,6 +25,7 @@ public class NumerosActivity extends AppCompatActivity {
         lvAnimales.setAdapter(adaptador);
     }
 
+    //Se agregan los archivos que serán mostrados en el arrayList de números
     private ArrayList<EntidadAnimales> GetArrayItems(){
         ArrayList<EntidadAnimales> listItems = new ArrayList<>();
         listItems.add(new EntidadAnimales(R.drawable.euno,"vegeta", R.drawable.eluno));
@@ -31,7 +33,6 @@ public class NumerosActivity extends AppCompatActivity {
         listItems.add(new EntidadAnimales(R.drawable.etres,"vegeta", R.drawable.eltres));
         listItems.add(new EntidadAnimales(R.drawable.ediez,"vegeta", R.drawable.eldiez));
         listItems.add(new EntidadAnimales(R.drawable.eveinte,"vegeta", R.drawable.elveinte));
-
 
         return listItems;
     }
