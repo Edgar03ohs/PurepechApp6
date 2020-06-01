@@ -1,43 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context=".EjerciciosActivity">
 
-    <TextView
-        android:id="@+id/PurepechApp"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/Ejercicios"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="Ejercicios"
+            android:textColor="#4E4040"
+            android:textSize="50sp"
+            />
+        <ImageView
+            android:layout_width="250dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            android:src="@drawable/gato"
+            />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:id="@+id/btnOpcion1"
+            android:text="tsikata"
+            android:layout_marginTop="40dp"
+
+            />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:id="@+id/btnOpcion2"
+            android:text="misitu"
+            android:layout_marginTop="40dp"
+
+
+            />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:id="@+id/btnOpcion3"
+            android:text="uíchu"
+            android:layout_marginTop="40dp"
+
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:text="Elige la opcion que corresponda a la imagen"/>
+
+    </LinearLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:gravity="center"
-        android:text="@string/app_name"
-        android:textColor="#4E4040"
-        android:textSize="50sp"
-        />
-    <ImageButton
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:id="@+id/imbOpcion1"
-        android:layout_marginTop="200dp"
-
-        />
-    <ImageButton
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:id="@+id/imbOpcion2"
-        android:layout_marginTop="50dp"
-
-
-        />
-    <ImageButton
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:id="@+id/imbOpcion3"
-        android:layout_marginTop="50dp"
-
-        />
-
-</LinearLayout>
+        android:layout_alignParentBottom="true"
+        app:itemBackground="@color/colorPrimary"
+        app:itemIconTint="@drawable/selector"
+        app:itemTextColor="@drawable/selector"
+        app:menu="@menu/menu_navigation" />
+</RelativeLayout>

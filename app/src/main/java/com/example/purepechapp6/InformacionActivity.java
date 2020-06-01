@@ -18,22 +18,26 @@ public class InformacionActivity extends AppCompatActivity {
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
 
         //La opcion seleccionada del bottom navigation bar
-        bottomNavigationView.setSelectedItemId(R.id.informacion);
+        bottomNavigationView.setSelectedItemId(R.id.opInformacion);
 
         //ir a la actividad correspondiente seleccionada
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 switch (menuItem.getItemId()){
-                    case R.id.aprender:
+                    case R.id.opAprender:
                         startActivity(new Intent(getApplicationContext(),ConjuntosActivity.class));
                         overridePendingTransition(0,0);
                         return true;
-                    case R.id.perfil:
+                    case R.id.opPerfil:
                         startActivity(new Intent(getApplicationContext(),PerfilActivity.class));
                         overridePendingTransition(0,0);
                         return true;
-                    case R.id.informacion:
+                    case R.id.opInformacion:
+                        return true;
+                    case R.id.opEjercicios:
+                        startActivity(new Intent(getApplicationContext(),EjerciciosActivity.class));
+                        overridePendingTransition(0,0);
                         return true;
                 }
                 return false;
