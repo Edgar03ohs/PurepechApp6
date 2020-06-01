@@ -12,13 +12,17 @@ import com.example.purepechapp6.R;
 import java.util.ArrayList;
 
 public class AdaptadorAnimales extends BaseAdapter {
+    // Se crea un ArrayList
     private Context context;
     private ArrayList<EntidadAnimales> listAnimales;
+
+    //constructores
 
     public AdaptadorAnimales(Context context, ArrayList<EntidadAnimales> listItems) {
         this.context = context;
         this.listAnimales = listItems;
     }
+    //Métodos que ayudan al llamado correcto de los archivos a sus correspondientes activitys
     @Override
     public int getCount() {
         return listAnimales.size();

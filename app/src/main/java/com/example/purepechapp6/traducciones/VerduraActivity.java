@@ -10,7 +10,7 @@ import com.example.purepechapp6.R;
 
 import java.util.ArrayList;
 
-public class AnimalesActivity extends AppCompatActivity {
+public class VerduraActivity extends AppCompatActivity {
     //Se crea una listView y el adaptador
     private ListView lvAnimales;
     private AdaptadorAnimales adaptador;
@@ -18,25 +18,23 @@ public class AnimalesActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_animales);
+        setContentView(R.layout.activity_verdura);
 
-        lvAnimales = findViewById(R.id.listView_ListaAnimales);
+        lvAnimales = findViewById(R.id.listView_ListaVerdura);
         adaptador = new AdaptadorAnimales(this, GetArrayItems());
         lvAnimales.setAdapter(adaptador);
     }
 
-    //Se agregan los archivos que serán mostrados en el arrayList
-
-
+    //Se agregan los archivos que serán mostrados en el arrayList de frutas, verduras y semillas
     private ArrayList<EntidadAnimales> GetArrayItems(){
         ArrayList<EntidadAnimales> listItems = new ArrayList<>();
-        listItems.add(new EntidadAnimales(R.drawable.gato,"vegeta", R.drawable.letra_gato));
-        listItems.add(new EntidadAnimales(R.drawable.perro,"vegeta", R.drawable.letra_perro));
-        listItems.add(new EntidadAnimales(R.drawable.gallina,"vegeta", R.drawable.letra_gallina));
-        listItems.add(new EntidadAnimales(R.drawable.ardilla,"vegeta", R.drawable.letra_ardilla));
-        listItems.add(new EntidadAnimales(R.drawable.mariposa,"vegeta", R.drawable.letra_mariposa));
-
+        listItems.add(new EntidadAnimales(R.drawable.hchile,"vegeta", R.drawable.hlchile));
+        listItems.add(new EntidadAnimales(R.drawable.helote,"vegeta", R.drawable.hlelote));
+        listItems.add(new EntidadAnimales(R.drawable.hfrijol,"vegeta", R.drawable.hlfrijol));
+        listItems.add(new EntidadAnimales(R.drawable.hmaiz,"vegeta", R.drawable.hlmaiz));
+        listItems.add(new EntidadAnimales(R.drawable.hnopal,"vegeta", R.drawable.hlnopal));
 
         return listItems;
     }
 }
+

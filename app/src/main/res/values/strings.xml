@@ -24,5 +24,5 @@
     <string name="txt_cardCuerpo">Partes del cuerpo</string>
     <string name="txt_cardNumeros">Números</string>
     <string name="txt_cardVerbos">Verbos</string>
-    <string name="txt_cardFrutas">Frutas y verduras</string>
+    <string name="txt_cardFrutas">Frutas, verduras y semillas</string>
 </resources>

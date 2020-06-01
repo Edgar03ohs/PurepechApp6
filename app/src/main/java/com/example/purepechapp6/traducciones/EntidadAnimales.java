@@ -11,6 +11,7 @@ public class EntidadAnimales {
         this.imgTraduccion = imgTraduccion;
         this.titulos = titulos;
     }
+    //Métodos a implementar para llamar los archivos a su correspondiente actuvity
 
     public int getImgAnimales(){return imgAnimales;}
     public int getImgTraduccion(){return imgTraduccion;}
