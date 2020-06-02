@@ -93,19 +93,18 @@ public class LoginActivity extends AppCompatActivity {
 
             //Se verifica que los campos no estén vacíos
 
-            if (ContraseñaLog.length() !=0 && CorreoLog.length() !=0) {
-                ingresarExistente();
-            }
-            else if (ContraseñaLog.length() ==0 && CorreoLog.length() != 0){
-                Toast.makeText(getApplicationContext(), "Debes inrgesar tu contraseña", Toast.LENGTH_SHORT).show();
-            }
-            else if(CorreoLog.length() == 0 && ContraseñaLog.length() !=0){
-                Toast.makeText(getApplicationContext(), "Debes ingresar un correo para iniciar sesión", Toast.LENGTH_SHORT).show();
-            }
-            else if(CorreoLog.length() == 0 && ContraseñaLog.length() ==0)
+            if(CorreoLog.length() == 0 && ContraseñaLog.length() ==0)
             {
                 Toast.makeText(getApplicationContext(), "Los campos están vacíos", Toast.LENGTH_SHORT).show();
-            }
+            } else if (ContraseñaLog.length() !=0 && CorreoLog.length() !=0) {
+                ingresarExistente();
+                }
+                else if (ContraseñaLog.length() ==0 && CorreoLog.length() != 0){
+                    Toast.makeText(getApplicationContext(), "Debes inrgesar tu contraseña", Toast.LENGTH_SHORT).show();
+                }
+                else if(CorreoLog.length() == 0 && ContraseñaLog.length() !=0){
+                    Toast.makeText(getApplicationContext(), "Debes ingresar un correo para iniciar sesión", Toast.LENGTH_SHORT).show();
+                }
             //Hilo para evitar interrupciones y pueda llevarse a cabo el inicio de seión
             new Thread(new Runnable() {
                 @Override

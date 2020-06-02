@@ -67,42 +67,48 @@ public class RegistroActivity extends AppCompatActivity {
 
                 //Verificando que los campos no estén vacíos, la contraseña sea de al menos 6 dígitos y coincida con su confirmación
 
-                if(confContra.length() ==0){
-                    Toast.makeText(getApplicationContext(), "Debes confirmar la contraseña", Toast.LENGTH_SHORT).show();
-                }
-                if(contraseña.length() ==0){
-                    Toast.makeText(getApplicationContext(), "Debes ingresar una contraseña", Toast.LENGTH_SHORT).show();
-                }
-                if(correo.length() ==0){
-                    Toast.makeText(getApplicationContext(), "Debes ingresar un Correo", Toast.LENGTH_SHORT).show();
-                }
-                if(usuario.length() ==  0 )
+                if(usuario.length() == 0 && correo.length() ==0 && contraseña.length() ==0 && confContra.length() ==0)
                 {
-                    Toast.makeText(getApplicationContext(), "Debes ingresar un Nombre", Toast.LENGTH_SHORT).show();
-                }
-                if( usuario.length() != 0 && correo.length() !=0 && contraseña.length() !=0 &&  confContra.length()!=0)
-                {
-                    if(contraseña.length() >=6 )
+                    Toast.makeText(getApplicationContext(), "Los campos están vacíos", Toast.LENGTH_SHORT).show();
+                } else {
+
+                    if(confContra.length() ==0){
+                        Toast.makeText(getApplicationContext(), "Debes confirmar la contraseña", Toast.LENGTH_SHORT).show();
+                    }
+                    if(contraseña.length() ==0){
+                        Toast.makeText(getApplicationContext(), "Debes ingresar una contraseña", Toast.LENGTH_SHORT).show();
+                    }
+                    if(correo.length() ==0){
+                        Toast.makeText(getApplicationContext(), "Debes ingresar un Correo", Toast.LENGTH_SHORT).show();
+                    }
+                    if(usuario.length() ==  0 )
                     {
-                        if (!confContra.equals(contraseña)) {
-                            Toast.makeText(getApplicationContext(), "Las contraseñas deben coincidir", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Debes ingresar un Nombre", Toast.LENGTH_SHORT).show();
+                    }
+                    if( usuario.length() != 0 && correo.length() !=0 && contraseña.length() !=0 &&  confContra.length()!=0)
+                    {
+                        if(contraseña.length() >=6 )
+                        {
+                            if (!confContra.equals(contraseña)) {
+                                Toast.makeText(getApplicationContext(), "Las contraseñas deben coincidir", Toast.LENGTH_SHORT).show();
+                            } else {
+                                Toast.makeText(getApplicationContext(), "Se está registrando al usuario", Toast.LENGTH_SHORT).show();
+                                agregarElementos();
+
+                                //crearUsuario(correo, contraseña);
+
+                                /*
+                                Toast.makeText(getApplicationContext(), "Te has registrado con éxito, " + usuario, Toast.LENGTH_SHORT).show();
+                                Intent intentLogin = new Intent(getApplicationContext(), LoginActivity.class);
+                                intentLogin.putExtra(getString(R.string.usuario), usuario);
+                                intentLogin.putExtra(getString(R.string.contrase_a), contraseña);
+                                startActivity(intentLogin);
+                                finish();
+                                 */
+                            }
                         } else {
-                            Toast.makeText(getApplicationContext(), "Se está registrando al usuario", Toast.LENGTH_SHORT).show();
-                            agregarElementos();
-
-                            //crearUsuario(correo, contraseña);
-
-                            /*
-                            Toast.makeText(getApplicationContext(), "Te has registrado con éxito, " + usuario, Toast.LENGTH_SHORT).show();
-                            Intent intentLogin = new Intent(getApplicationContext(), LoginActivity.class);
-                            intentLogin.putExtra(getString(R.string.usuario), usuario);
-                            intentLogin.putExtra(getString(R.string.contrase_a), contraseña);
-                            startActivity(intentLogin);
-                            finish();
-                             */
+                            Toast.makeText(getApplicationContext(), "Contraseña demasiado corta", Toast.LENGTH_SHORT).show();
                         }
-                    } else {
-                        Toast.makeText(getApplicationContext(), "Contraseña demasiado corta", Toast.LENGTH_SHORT).show();
                     }
                 }
             }

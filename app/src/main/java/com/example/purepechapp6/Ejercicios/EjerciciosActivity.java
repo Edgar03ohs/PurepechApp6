@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.purepechapp6.ConjuntosActivity;
@@ -24,6 +26,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.util.Random;
+
 public class EjerciciosActivity extends AppCompatActivity implements View.OnClickListener{
 
     String usuario;
@@ -31,6 +35,12 @@ public class EjerciciosActivity extends AppCompatActivity implements View.OnClic
     String contraseña;
     String id;
     int puntos;
+    int temporal;
+
+    private int [] mEjerciciosImg = {R.drawable.ardilla, R.drawable.gallina, R.drawable.gato, R.drawable.mariposa, R.drawable.perro};
+    private String [] mEjerciciosStr = {"kuaraki", "tsikata", "misitu", "parakata", "uíchu" };
+
+    private int mPosicionActual = -1;
 
     //Agregamos atributo mAuth para administrar el registro de un nuevo usuario
     private FirebaseAuth mAuth;
@@ -56,6 +66,8 @@ public class EjerciciosActivity extends AppCompatActivity implements View.OnClic
         btnOpcion1.setOnClickListener(this);
         btnOpcion2.setOnClickListener(this);
         btnOpcion3.setOnClickListener(this);
+
+        cambiarEjercicio();
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
 
@@ -85,12 +97,58 @@ public class EjerciciosActivity extends AppCompatActivity implements View.OnClic
                 return false;
             }
         });
+    }
+
+    private void cambiarEjercicio() {
+        Button btnOpcion1 = findViewById(R.id.btnOpcion1);
+        Button btnOpcion2 = findViewById(R.id.btnOpcion2);
+        Button btnOpcion3 = findViewById(R.id.btnOpcion3);
+        ImageView Imagen = findViewById(R.id.imgEjerAnimal);
+        int aux[] = new int[3];
+        //Poniendo una imagen aleatoria distinta a la anterior
+
+        Random numeroImagen = new Random();
+
+
+        temporal = numeroImagen.nextInt(3);
+
+        Toast.makeText(this, ""+temporal, Toast.LENGTH_SHORT).show();
+
+        //do {
+            aux[0] = numeroImagen.nextInt(5);
+        //}while (mPosicionActual == aux[0]);
+
+        for (int i=1; i<3; i++){
+            aux[i] = numeroImagen.nextInt(5);
+            for (int j=0; j<i; j++){
+                if(aux[i]==aux[j]){
+                    i--;
+                }
+            }
+        }
+
+        do {if(aux[temporal]==mPosicionActual){
+            temporal=numeroImagen.nextInt(3);
+        }
+
+        }while (mPosicionActual==aux[temporal]);
+
+        mPosicionActual = aux[temporal];
+
+        //dando 3 opciones con solo una correcta
+
+        btnOpcion1.setText(mEjerciciosStr[aux[0]]);
+        btnOpcion2.setText(mEjerciciosStr[aux[1]]);
+        btnOpcion3.setText(mEjerciciosStr[aux[2]]);
+
+        Imagen.setImageResource(mEjerciciosImg[aux[temporal]]);
 
     }
 
     //Suma de puntos
 
     private void obtenerInformacion() {
+
         final String id = mAuth.getCurrentUser().getUid();
         db.collection("Usuarios").document(id).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override
@@ -119,19 +177,28 @@ public class EjerciciosActivity extends AppCompatActivity implements View.OnClic
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.btnOpcion1:
-                Toast.makeText(this, "Incorrecto", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(EjerciciosActivity.this, Ejercicios2Activity.class));
-                finish();
+                if (temporal==0){
+                    obtenerInformacion();
+                } else {
+                    Toast.makeText(this, "Incorrecto", Toast.LENGTH_SHORT).show();
+                }
+                cambiarEjercicio();
                 break;
             case R.id.btnOpcion2:
-                obtenerInformacion();
-                startActivity(new Intent(EjerciciosActivity.this, Ejercicios2Activity.class));
-                finish();
+                if (temporal==1){
+                    obtenerInformacion();
+                } else {
+                    Toast.makeText(this, "Incorrecto", Toast.LENGTH_SHORT).show();
+                }
+                cambiarEjercicio();
                 break;
             case R.id.btnOpcion3:
-                Toast.makeText(this, "Incorrecto", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(EjerciciosActivity.this, Ejercicios2Activity.class));
-                finish();
+                if (temporal==2){
+                    obtenerInformacion();
+                } else {
+                    Toast.makeText(this, "Incorrecto", Toast.LENGTH_SHORT).show();
+                }
+                cambiarEjercicio();
                 break;
         }
 
