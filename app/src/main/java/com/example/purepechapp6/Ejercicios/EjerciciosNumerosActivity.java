@@ -28,7 +28,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.Random;
 
-public class EjerciciosActivity extends AppCompatActivity implements View.OnClickListener{
+public class EjerciciosNumerosActivity extends AppCompatActivity implements View.OnClickListener{
 
     String usuario;
     String correo;
@@ -37,8 +37,8 @@ public class EjerciciosActivity extends AppCompatActivity implements View.OnClic
     int puntos;
     int temporal;
 
-    private int [] mEjerciciosImg = {R.drawable.ardilla, R.drawable.gallina, R.drawable.gato, R.drawable.mariposa, R.drawable.perro};
-    private String [] mEjerciciosStr = {"kuaraki", "tsikata", "misitu", "parakata", "uíchu" };
+    private int [] mEjerciciosImg = {R.drawable.euno, R.drawable.edos, R.drawable.etres, R.drawable.ediez, R.drawable.eveinte};
+    private String [] mEjerciciosStr = {"ma", "tsimani", "tanimu", "témbini", "ekuatsi" };
 
     private int mPosicionActual = -1;
 
@@ -52,7 +52,7 @@ public class EjerciciosActivity extends AppCompatActivity implements View.OnClic
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ejercicios);
+        setContentView(R.layout.activity_ejercicios_numeros);
 
         //Relacionando los java con los xml
         Button btnOpcion1 = findViewById(R.id.btnOpcion1);
@@ -113,7 +113,7 @@ public class EjerciciosActivity extends AppCompatActivity implements View.OnClic
         temporal = numeroImagen.nextInt(3);
 
         //do {
-            aux[0] = numeroImagen.nextInt(5);
+        aux[0] = numeroImagen.nextInt(5);
         //}while (mPosicionActual == aux[0]);
 
         for (int i=1; i<3; i++){
@@ -202,3 +202,4 @@ public class EjerciciosActivity extends AppCompatActivity implements View.OnClic
 
     }
 }
+

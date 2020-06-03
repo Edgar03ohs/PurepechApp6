@@ -61,7 +61,7 @@ public class PerfilActivity extends AppCompatActivity {
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.opEjercicios:
-                        startActivity(new Intent(getApplicationContext(), EjerciciosActivity.class));
+                        startActivity(new Intent(getApplicationContext(), SeleccionarActivity.class));
                         overridePendingTransition(0,0);
                         return true;
                 }

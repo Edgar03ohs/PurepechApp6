@@ -11,7 +11,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Ejercicios.Ejercicios2Activity"></activity>
+        <activity android:name=".Ejercicios.EjerciciosTodoActivity"></activity>
+        <activity android:name=".Ejercicios.EjerciciosFrutaActivity" />
+        <activity android:name=".Ejercicios.EjerciciosVerbosActivity" />
+        <activity android:name=".Ejercicios.EjerciciosNumerosActivity" />
+        <activity android:name=".Ejercicios.EjerciciosCuerpoActivity" />
+        <activity android:name=".Ejercicios.EjerciciosCampoActivity" />
+        <activity android:name=".SeleccionarActivity" />
         <activity android:name=".Ejercicios.EjerciciosActivity" />
         <activity android:name=".traducciones.VerduraActivity" />
         <activity android:name=".traducciones.VerbosActivity" />

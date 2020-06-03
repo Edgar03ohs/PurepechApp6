@@ -28,7 +28,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.Random;
 
-public class EjerciciosActivity extends AppCompatActivity implements View.OnClickListener{
+public class EjerciciosTodoActivity extends AppCompatActivity implements View.OnClickListener{
 
     String usuario;
     String correo;
@@ -37,8 +37,8 @@ public class EjerciciosActivity extends AppCompatActivity implements View.OnClic
     int puntos;
     int temporal;
 
-    private int [] mEjerciciosImg = {R.drawable.ardilla, R.drawable.gallina, R.drawable.gato, R.drawable.mariposa, R.drawable.perro};
-    private String [] mEjerciciosStr = {"kuaraki", "tsikata", "misitu", "parakata", "uíchu" };
+    private int [] mEjerciciosImg = {R.drawable.hchile, R.drawable.helote, R.drawable.hfrijol, R.drawable.hmaiz, R.drawable.hnopal, R.drawable.fcomer, R.drawable.fcorrer, R.drawable.fjugar, R.drawable.fsaludar, R.drawable.fver, R.drawable.euno, R.drawable.edos, R.drawable.etres, R.drawable.ediez, R.drawable.eveinte, R.drawable.dcabello, R.drawable.dcabeza, R.drawable.dmano, R.drawable.dpie, R.drawable.dojo, R.drawable.carar, R.drawable.ccampesino, R.drawable.ccosecha, R.drawable.cmilpa, R.drawable.csembrar, R.drawable.ardilla, R.drawable.gallina, R.drawable.gato, R.drawable.mariposa, R.drawable.perro};
+    private String [] mEjerciciosStr = {"k´auasï", "tiriapu", "t´atsïni", "tsíri", "parhe", "t´ireni", "uiriani", "ch´anani", "uandajpani", "exeni", "ma", "tsimani", "tanimu", "témbini", "ekuatsi", "jauiri", "éjpu", "jájki", "jantsiri", "éskua", "tarheni", "tarheri", "phikunskua", "tarheta", "júkskani", "kuaraki", "tsikata", "misitu", "parakata", "uíchu"};
 
     private int mPosicionActual = -1;
 
@@ -52,7 +52,7 @@ public class EjerciciosActivity extends AppCompatActivity implements View.OnClic
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ejercicios);
+        setContentView(R.layout.activity_ejercicios_todo);
 
         //Relacionando los java con los xml
         Button btnOpcion1 = findViewById(R.id.btnOpcion1);
@@ -113,11 +113,11 @@ public class EjerciciosActivity extends AppCompatActivity implements View.OnClic
         temporal = numeroImagen.nextInt(3);
 
         //do {
-            aux[0] = numeroImagen.nextInt(5);
+        aux[0] = numeroImagen.nextInt(30);
         //}while (mPosicionActual == aux[0]);
 
         for (int i=1; i<3; i++){
-            aux[i] = numeroImagen.nextInt(5);
+            aux[i] = numeroImagen.nextInt(30);
             for (int j=0; j<i; j++){
                 if(aux[i]==aux[j]){
                     i--;
@@ -202,3 +202,5 @@ public class EjerciciosActivity extends AppCompatActivity implements View.OnClic
 
     }
 }
+
+

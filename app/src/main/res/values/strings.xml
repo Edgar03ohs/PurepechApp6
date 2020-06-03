@@ -25,4 +25,9 @@
     <string name="txt_cardNumeros">Números</string>
     <string name="txt_cardVerbos">Verbos</string>
     <string name="txt_cardFrutas">Frutas, verduras y semillas</string>
+    <string name="conjunto_a_reforzar">Conjunto a reforzar</string>
+    <string name="ejercicios">Ejercicios</string>
+    <string name="animales">Animales</string>
+    <string name="campo">Campo</string>
+    <string name="general">General</string>
 </resources>

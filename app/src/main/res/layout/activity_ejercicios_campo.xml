@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Ejercicios.EjerciciosActivity">
+    tools:context=".Ejercicios.EjerciciosCampoActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -22,12 +22,12 @@
             android:textSize="50sp"
             />
         <TextView
-            android:id="@+id/EjerAnimales"
+            android:id="@+id/EjerCampo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:gravity="center"
-            android:text="@string/animales"
+            android:text="@string/campo"
             android:textColor="#4E4040"
             android:textSize="30sp"
             />
